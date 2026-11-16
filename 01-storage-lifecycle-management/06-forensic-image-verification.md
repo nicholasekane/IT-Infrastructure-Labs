@@ -233,6 +233,12 @@ Unlike an ordinary file-level backup, this operation copied the entire raw sourc
 
 The source and acquired images had identical logical sizes.
 
+#### Supporting Evidence — Forensic Image Acquisition
+
+![Ubuntu terminal showing source SHA-256 checksum and successful disk image acquisition](evidence/forensic-image-acquisition.png)
+
+*Figure 1. SHA-256 baseline generation followed by successful sector-level acquisition of the 64 MiB virtual disk using dd.*
+
 The reported acquisition throughput reflects a small file-based operation inside a virtual environment and should not be interpreted as a physical HDD performance benchmark.
 
 ### Acquisition method comparison
@@ -301,6 +307,12 @@ acquired_disk.img: OK
 The acquired image matched the SHA-256 checksum established before acquisition.
 
 This provided cryptographic evidence that the acquired disk image contained the same bytes as the original source.
+
+#### Supporting Evidence — Cryptographic Integrity Verification
+
+![SHA-256 verification showing matching source and acquired disk image checksums](evidence/forensic-sha256-verification.png)
+
+*Figure 2. SHA-256 verification confirmed that the original source remained unchanged and that the acquired image matched the original cryptographic baseline.*
 
 ## 6. Read-Only Forensic Image Inspection
 
@@ -416,6 +428,12 @@ The acquired image's SHA-256 checksum remained consistent with the original sour
 | After recovery | Reverify acquired image against baseline | PASS |
 
 **Overall result:** The acquired forensic image retained its original cryptographic integrity throughout the completed investigation.
+
+#### Supporting Evidence — Read-Only Extraction and Final Verification
+
+![Linux terminal showing read-only image mounting, file extraction, and successful post-recovery checksum verification](evidence/forensic-file-extraction.png)
+
+*Figure 3. Successful read-only filesystem inspection, extraction of both test files, and final SHA-256 verification confirming that the acquired image remained unchanged.*
 
 ## 9. Troubleshooting During Implementation
 
