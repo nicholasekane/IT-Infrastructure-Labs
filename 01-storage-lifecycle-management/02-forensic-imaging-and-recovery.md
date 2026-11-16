@@ -155,6 +155,12 @@ The reported unrecovered byte count increased compared with the earlier acquisit
 
 The image was suitable for further investigation, but it could not be described as a complete, error-free copy of the original disk.
 
+#### Supporting Evidence — ddrescue Acquisition Results
+
+![GNU ddrescue retry results showing unreadable bytes and read errors](evidence/wd-ddrescue-retry-results.png)
+
+*Figure 1. GNU ddrescue retry results documenting approximately 99.99% acquisition, 94,208 unreadable bytes, 368 read errors, and eight bad areas.*
+
 ### Acquisition artifacts
 
 - `WD_MyBook_1TB.img` — sector-level disk image
@@ -219,6 +225,12 @@ Some directory metadata could not be read normally.
 
 No accessible personal media files were identified through ordinary filesystem inspection.
 
+#### Supporting Evidence — Partition Inspection and Read-Only Mount
+
+![Linux partition inspection and read-only mounting of the WD disk image](evidence/wd-fdisk-readonly-mount.png)
+
+*Figure 2. Linux terminal output demonstrating partition identification, filesystem offset calculation, and read-only mounting of the acquired disk image.*
+
 ## 5. TestDisk Recovery Investigation
 
 TestDisk was used to investigate the acquired image and examine its NTFS partition and directory structure.
@@ -269,6 +281,12 @@ The result established that the recovery methods used during this investigation 
 
 It did not establish that every possible professional recovery technique would produce the same result.
 
+#### Supporting Evidence — PhotoRec Recovery Results
+
+![PhotoRec completed recovery scan showing zero recovered files](evidence/wd-photorec-recovery-results.png)
+
+*Figure 3. PhotoRec signature-based recovery scan completed with zero recovered files, supporting the findings of the filesystem-based investigation.*
+
 ## 7. Raw Image Data Investigation
 
 Because filesystem recovery and file carving produced no useful media, the acquired image was examined to determine how much nonzero data remained.
@@ -288,6 +306,12 @@ The limited amount of nonzero data supported the assessment that the image conta
 This finding was consistent with extensive previous clearing or overwriting of the drive, although the exact historical formatting method could not be established.
 
 Nonzero data alone does not prove that recoverable files are present.
+
+#### Supporting Evidence — Raw Image Analysis
+
+![Linux raw disk image analysis showing the amount of nonzero data](evidence/wd-raw-image-analysis.png)
+
+*Figure 4. Raw image analysis using Linux utilities identified approximately 91.6 MiB of nonzero data within the approximately 932 GiB acquired image.*
 
 ## 8. Recovery Assessment and Final Decision
 
