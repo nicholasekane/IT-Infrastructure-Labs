@@ -61,6 +61,51 @@ This project was conducted using physical storage devices and a controlled Linux
 | Controlled forensic image verification | Source and acquired image SHA-256 hashes matched |
 | Read-only image extraction | Successful; image integrity preserved |
 
+## Project Evidence Highlights
+
+Selected evidence from the completed storage lifecycle activities. Expand each section to view the corresponding technical results.
+
+<details>
+<summary><strong>Forensic Acquisition — Failing Physical HDD</strong></summary>
+
+<br>
+
+![GNU ddrescue acquisition results](evidence/wd-ddrescue-retry-results.png)
+
+GNU ddrescue acquisition of a failing Western Digital 1 TB HDD, with approximately 99.99% of the disk recovered and unreadable regions documented.
+
+[View the complete forensic imaging and recovery investigation](02-forensic-imaging-and-recovery.md)
+
+</details>
+
+<details>
+<summary><strong>Backup Integrity — 373 GB Verified</strong></summary>
+
+<br>
+
+![FreeFileSync backup content comparison](evidence/backup-content-comparison.png)
+
+Full file-content comparison between the Hitachi source and Seagate backup, with no differences reported among accessible files.
+
+[View the complete backup and restoration procedure](03-backup-and-restoration.md)
+
+</details>
+
+<details>
+<summary><strong>Cryptographic Integrity — SHA-256 Verification</strong></summary>
+
+<br>
+
+![SHA-256 forensic image verification](evidence/forensic-sha256-verification.png)
+
+Successful SHA-256 verification of a sector-level disk image acquired in a controlled Ubuntu Server virtual lab.
+
+[View the complete forensic image verification procedure](06-forensic-image-verification.md)
+
+</details>
+
+[View all supporting evidence](evidence/README.md)
+
 ## Technical Skills Demonstrated
 
 - Storage hardware diagnostics and failure assessment
