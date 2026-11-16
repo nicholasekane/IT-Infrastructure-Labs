@@ -229,6 +229,12 @@ No synchronization or file overwriting was performed during this verification.
 
 The final FreeFileSync interface reported 59,767 items in its comparison statistics. This broader item count is retained separately from the 54,043 files reported in the processing log.
 
+#### Supporting Evidence — Comparison Log
+
+![FreeFileSync content comparison log showing processing statistics and the protected directory exception](evidence/backup-comparison-log.png)
+
+*Figure 1. FreeFileSync processed approximately 373 GB across 54,043 files in 1 hour, 6 minutes, and 52 seconds. The protected Config.Msi directory was recorded as an access-denied exception.*
+
 ### Assessment
 
 The File Content comparison established that no byte-level differences were detected among the accessible files included in the comparison.
@@ -236,6 +242,12 @@ The File Content comparison established that no byte-level differences were dete
 This provided stronger verification than checking file presence, modification time, and file size alone.
 
 The inaccessible Windows Installer directory remained outside the verified scope.
+
+#### Supporting Evidence — Backup Integrity Results
+
+![FreeFileSync final content comparison showing no differences between the Hitachi and Seagate drives](evidence/backup-content-comparison.png)
+
+*Figure 2. The final File Content comparison reported no differences among accessible files between the Hitachi source (E:) and Seagate backup (F:).*
 
 ## 7. Independent Restoration Testing
 
