@@ -105,6 +105,12 @@ The presence of 74 pending sectors indicated that portions of the disk could not
 
 Although the diagnostic application displayed a positive overall health indicator, the individual SMART attributes and observed read errors indicated that the drive was at risk.
 
+#### Supporting Evidence — SMART Diagnostics
+
+![Western Digital SMART diagnostics showing pending sectors](evidence/wd-smart-pending-sectors.png)
+
+*Figure 1. SMART diagnostic results showing 74 pending sectors on the Western Digital My Book HDD.*
+
 ### Read Error Investigation
 
 DMDE encountered the following read failure:
@@ -116,6 +122,12 @@ DMDE encountered the following read failure:
 | Error type | Device I/O error |
 
 The error provided additional evidence that the drive could not reliably return data from all sectors.
+
+#### Supporting Evidence — Device Read Failure
+
+![DMDE device I/O error at LBA 367](evidence/wd-dmde-io-error.png)
+
+*Figure 2. DMDE reporting a device I/O error at logical block address 367, confirming unreliable sector access.*
 
 ### Assessment
 
